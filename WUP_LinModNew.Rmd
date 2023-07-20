@@ -31,11 +31,43 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ```
 
+# Introduction
+We predict a stimulated strength based on a arm and grip strength. We will find three models and compare them. The response variable is numerical, so we use the 
+num~num helper file.
+
+
 ## Model 1 SIM~ARMS
+
+## Results
+### graphical results
+
+```{r}
+mode1.1 <- lm(SIMS~ARM,data=data)
+plot(SIMS~ARM,data=data)
+abline(mode1.1, col='red')
+```
+As Arm Strength
+
+###numerical results
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+
+The correlation is 0.68 which is showing the arm strength is related to the 
+sim score.
+
+## Interfential Results
+
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
 
 ### scatterplot
 
-### Numerical results
+### Numerical results 
 
 
 ### Inferential  (Build model.1)
